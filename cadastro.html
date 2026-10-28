@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendar conversa - QTeste Integra</title>
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="libs/fontawesome/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="checkout.css" />
+</head>
+<body class="checkout-body">
+
+    <header class="checkout-header container">
+        <a class="header-logo" href="index.html" aria-label="Voltar ao site">
+            <img class="logo-img" src="asset1/logo-qteste.png" alt="QTeste Integra" />
+        </a>
+        <a class="back-link" href="index.html">&larr; Voltar ao site</a>
+    </header>
+
+    <main class="container checkout-grid">
+
+        <!-- COLUNA 1: o que acontece -->
+        <section class="order-summary">
+            <h1>Vamos conversar sobre o seu projeto</h1>
+            <p class="lead">Preencha os dados ao lado. Entramos em contato para combinar uma conversa de 30 minutos, sem custo, sobre a sua integração de pagamento.</p>
+
+            <h2>Como funciona</h2>
+            <ol class="step-list">
+                <li>Recebemos seus dados e entramos em contato por e-mail ou WhatsApp para combinar o horário.</li>
+                <li>Na conversa, entendemos o seu provedor, se a integração está em desenvolvimento ou em produção e como os webhooks e retries são tratados.</li>
+                <li>Indicamos o pacote mais adequado e enviamos uma proposta com o escopo e o orçamento fechados.</li>
+            </ol>
+
+            <h2>Sem compromisso</h2>
+            <p class="not-included">A conversa não gera cobrança. Você só contrata se a proposta fizer sentido. Não pedimos senha nem criamos conta: é só um formulário.</p>
+
+            <h2>Prefere falar agora?</h2>
+            <p class="lead" style="margin-bottom:12px">Chame direto no WhatsApp, sem preencher nada.</p>
+            <a class="button-contact" style="display:inline-block;margin:0" target="_blank"
+               href="https://api.whatsapp.com/send?phone=5511958567231&amp;text=Quero%20bater%20um%20papo%20sobre%20o%20meu%20projeto%20de%20integra%C3%A7%C3%A3o.">Falar no WhatsApp</a>
+        </section>
+
+        <!-- COLUNA 2: formulário (cadastro de contato) -->
+        <div class="order-form" id="cad-box">
+            <form id="cadastro-form" class="form-inner">
+                <h2>Seus dados</h2>
+                <p class="form-hint">Leva menos de 1 minuto.</p>
+
+                <label>Nome<input name="nome" required autocomplete="name" /></label>
+                <label>E-mail<input name="email" type="email" required autocomplete="email" /></label>
+                <label>WhatsApp<input name="telefone" type="tel" required autocomplete="tel" placeholder="(11) 99999-9999" /></label>
+                <label>Empresa<input name="empresa" required autocomplete="organization" /></label>
+                <label>Provedor de pagamento que você usa
+                    <select name="provedor">
+                        <option>Ainda não definido</option>
+                        <option>Pix direto</option>
+                        <option>Gateway de cartão</option>
+                        <option>Boleto</option>
+                        <option>Vários provedores</option>
+                    </select>
+                </label>
+                <label>O que você precisa?
+                    <select name="interesse">
+                        <option>Ainda não sei, quero conversar</option>
+                        <option>Diagnóstico de Integração</option>
+                        <option>Validação de API e Webhook</option>
+                        <option>Homologação de Fluxo de Pagamento</option>
+                        <option>Reteste e acompanhamento</option>
+                    </select>
+                </label>
+                <label>Conte rapidamente o seu projeto (opcional)<textarea name="mensagem" placeholder="Ex.: vamos lançar Pix no mês que vem e queremos validar os webhooks."></textarea></label>
+
+                <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                <label class="chk"><input type="checkbox" name="lgpd" required />
+                    <span>Concordo que meus dados sejam usados apenas para entrar em contato sobre este projeto (LGPD).</span></label>
+
+                <button type="submit" class="button-contact">Quero conversar</button>
+                <p class="form-status" id="cadastro-status" role="status"></p>
+            </form>
+
+            <!-- Aparece depois do envio -->
+            <div class="success-box" id="cadastro-ok" hidden>
+                <i class="fa-solid fa-circle-check"></i>
+                <h2>Recebemos seus dados</h2>
+                <p id="cadastro-ok-msg">Entraremos em contato em breve para combinar o horário da conversa.</p>
+                <a class="button-contact" target="_blank"
+                   href="https://api.whatsapp.com/send?phone=5511958567231&amp;text=Acabei%20de%20enviar%20meus%20dados%20pelo%20site.%20Podemos%20combinar%20um%20hor%C3%A1rio%3F">Combinar horário pelo WhatsApp</a>
+                <a class="back-link" href="index.html">Voltar ao site</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="checkout-footer">
+        <p>Copyright 2026 QTeste Integra - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>

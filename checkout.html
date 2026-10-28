@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contratar Diagnóstico de Integração - QTeste Integra</title>
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="libs/fontawesome/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="checkout.css" />
+</head>
+<body class="checkout-body">
+
+    <!-- Aviso de modo demonstração: some sozinho quando você configurar PAYMENT_LINK em checkout.js -->
+    <div class="demo-banner" id="demo-banner">
+        Página em modo de demonstração: defina o valor e o link de pagamento em <code>checkout.js</code> para ativar a cobrança.
+    </div>
+
+    <header class="checkout-header container">
+        <a class="header-logo" href="index.html" aria-label="Voltar ao site">
+            <img class="logo-img" src="asset1/logo-qteste.png" alt="QTeste Integra" />
+        </a>
+        <a class="back-link" href="index.html#servicos">&larr; Voltar aos serviços</a>
+    </header>
+
+    <main class="container checkout-grid">
+
+        <!-- COLUNA 1: resumo do pedido -->
+        <section class="order-summary">
+            <h1>Diagnóstico de Integração</h1>
+            <p class="lead">Análise inicial da sua integração para identificar riscos técnicos e cenários que ainda não foram testados.</p>
+
+            <div class="price-box">
+                <span>Investimento</span>
+                <strong id="price">Valor a definir</strong>
+                <small>Pagamento integral antecipado · Prazo: 3 a 5 dias úteis</small>
+            </div>
+
+            <h2>O que está incluído</h2>
+            <ul class="check-list">
+                <li>Reunião técnica inicial</li>
+                <li>Análise da documentação da API, dos endpoints principais e dos webhooks</li>
+                <li>Avaliação preliminar de autenticação, idempotência e retries</li>
+                <li>Identificação de dependências externas e de cenários críticos</li>
+                <li>Relatório de riscos priorizados por severidade</li>
+                <li>Reunião de apresentação dos resultados</li>
+            </ul>
+
+            <h2>O que não está incluído</h2>
+            <p class="not-included">Execução completa dos testes, auditoria regulatória, certificação oficial, teste de invasão, teste de carga e garantia de aprovação por provedor. O diagnóstico mostra onde estão os riscos; a validação e a homologação são serviços seguintes, sob orçamento.</p>
+
+            <h2>O que precisamos de você</h2>
+            <ul class="check-list">
+                <li>Documentação técnica disponível e um contato técnico</li>
+                <li>Acesso a ambiente de sandbox ou homologação (nunca produção)</li>
+                <li>Confirmação de que os dados e ambientes fornecidos podem ser usados legalmente para teste</li>
+            </ul>
+
+            <h2>Como funciona depois do pagamento</h2>
+            <ol class="step-list">
+                <li>Você recebe a confirmação por e-mail.</li>
+                <li>Enviamos o termo de serviço e a lista do que precisamos.</li>
+                <li>Agendamos a reunião técnica inicial.</li>
+                <li>Entregamos o relatório e apresentamos os resultados.</li>
+            </ol>
+        </section>
+
+        <!-- COLUNA 2: dados do cliente -->
+        <form class="order-form" id="checkout-form">
+            <h2>Seus dados</h2>
+            <p class="form-hint">Usamos estes dados para a nota fiscal e para falar com você. Você escolhe Pix, cartão ou boleto na próxima etapa.</p>
+
+            <label>Nome completo<input name="nome" required autocomplete="name" /></label>
+            <label>E-mail<input name="email" type="email" required autocomplete="email" /></label>
+            <label>WhatsApp / telefone<input name="telefone" type="tel" required autocomplete="tel" placeholder="(11) 99999-9999" /></label>
+            <label>Empresa ou razão social<input name="empresa" required autocomplete="organization" /></label>
+            <label>CNPJ ou CPF (para a nota fiscal)<input name="documento" required inputmode="numeric" /></label>
+            <label>Qual provedor de pagamento você usa?
+                <select name="provedor">
+                    <option>Ainda não definido</option>
+                    <option>Pix direto</option>
+                    <option>Gateway de cartão</option>
+                    <option>Boleto</option>
+                    <option>Vários provedores</option>
+                </select>
+            </label>
+
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <label class="chk"><input type="checkbox" name="termos" required />
+                <span>Li e aceito o escopo acima. Entendo que o serviço valida o comportamento técnico da integração e <strong>não é certificação regulatória, auditoria de segurança nem aprovação oficial de provedor</strong>.</span></label>
+            <label class="chk"><input type="checkbox" name="lgpd" required />
+                <span>Concordo que meus dados sejam usados para emitir a nota fiscal e para a prestação do serviço (LGPD).</span></label>
+
+            <button type="submit" class="button-contact" id="pay-btn">Ir para o pagamento</button>
+            <p class="form-status" id="checkout-status" role="status"></p>
+            <p class="secure-note"><i class="fa-solid fa-lock"></i> O pagamento é feito no ambiente seguro do provedor. Não guardamos dados de cartão.</p>
+        </form>
+    </main>
+
+    <footer class="checkout-footer">
+        <p>Copyright 2026 QTeste Integra - Todos os direitos reservados</p>
+        <p>Dúvidas antes de contratar? <a href="index.html#contato">Fale conosco</a></p>
+    </footer>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

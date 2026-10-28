@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QTeste Integra - Validação de APIs, webhooks e pagamentos</title>
+    <meta name="description" content="Testamos APIs, webhooks e fluxos de pagamento antes do go-live. Diagnóstico, validação e homologação técnica." />
+
+    <!-- Bibliotecas locais (funcionam sem internet) -->
+    <link rel="stylesheet" href="libs/aos/aos.css" />
+    <link rel="stylesheet" href="libs/fontawesome/css/all.min.css" />
+
+    <!-- Fonte Sora (precisa de internet; sem ela usa Arial) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Estilos da página: edite aqui cores e tamanhos -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="libs/aos/aos.js"></script>
+    <noscript><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+     <!--Header-->
+     <div class="bg-home"> 
+        <header>
+
+            <nav class="header-content container">
+                <div class="header-icons" data-aos="fade-down" data-aos-delay="0">
+                    <a href="https://www.linkedin.com/in/guydjoumessi" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/GMDEVPRO" target="_blank">
+                        <i class="fa-brands fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=5511958567231&amp;text=Quero%20agendar%20uma%20conversa%20sobre%20minha%20integra%C3%A7%C3%A3o%20de%20pagamento." target="_blank">
+                        <i class="fa-brands fa-whatsapp fa-2x"></i>
+                    </a>
+            </div>
+            
+            <div class="header-logo" data-aos="fade-up" data-aos-delay="300">
+                <img class="logo-img" src="asset1/logo-qteste.png" alt="QTeste Integra" />
+
+            </div>
+
+            <div data-aos="fade-down" data-aos-delay="0">
+                <a class="header-button" href="cadastro.html">
+                    CONTATO
+                </a>
+            </div>
+
+        </nav>
+
+        <main class="hero container" data-aos="fade-up" data-aos-delay="400">
+            <h1>SEU PAGAMENTO APROVADO NÃO PODE SER COBRADO DUAS VEZES.</h1>
+            <p>Testamos APIs, webhooks e fluxos de pagamento (Pix, cartões, boletos) antes do go-live. Encontramos duplicidade, timeout, 
+               retry e erro de conciliação enquanto ainda é barato corrigir.</p>
+            <div class="hero-btns"><a href="cadastro.html" class="button-contact">
+                Agendar uma conversa 
+            </a><a class="button-contact ghost" href="#servicos">Ver serviços</a></div>
+        </main>
+    </header>
+
+</div>
+
+<!--ABOUT-->
+
+<section class="about">
+    <div class="container about-content">
+        <div data-aos="zoom-in" data-aos-delay="100">
+            <img 
+            src="asset1/sobre-2.svg" 
+            alt="imagens sobre a QTeste Integra"
+            />
+        </div>
+
+        <div 
+        class="about-description"
+        data-aos="zoom-out-left" data-aos-delay="250" 
+        >
+            <h2>Sobre</h2>
+            <p>A QTeste Integra é uma consultoria brasileira de testes e validação de APIs, webhooks e integrações de pagamento. Homologação, aqui, é a execução documentada de cenários técnicos em ambiente de sandbox ou homologação, com evidências e riscos classificados. Não é certificação regulatória nem aprovação oficial de provedor.</p>
+            <p>Atendimento: <strong>remoto</strong> em <strong>todo o Brasil</strong></p>
+
+        </div>
+    </div>
+
+</section>
+
+<!--SERVICES-->
+<section class="services" id="servicos">
+<div class="services-content container">
+<h2>Serviços e casos de teste</h2>
+<p>Comece pelo diagnóstico e avance conforme o risco encontrado. 
+   Cada pacote mostra os casos de teste que cobre; as cores indicam a severidade típica e, ao tocar ou passar o cursor sobre cada uma, você vê o que verificamos.</p>
+</div>
+<div class="plans">
+
+    <div class="plan" data-aos="fade-up" data-aos-delay="150">
+      <div class="plan-top"><h3>Diagnóstico de Integração</h3><span>3 a 5 dias úteis</span></div>
+      <ul>
+        <li>Análise da documentação, endpoints e webhooks</li>
+        <li>Avaliação de autenticação, idempotência e retries</li>
+        <li>Relatório de riscos priorizados e reunião de resultados</li>
+      </ul>
+      <div class="chips"><span>Mapeia o risco de:</span>
+        <span class="chip c" title="O mesmo evento chega duas vezes. O pedido deve ser baixado uma vez só.">Webhook duplicado</span>
+        <span class="chip c" title="Dois cliques ou um retry criam duas cobranças? Verificamos a chave de idempotência.">Cobrança duplicada</span>
+        <span class="chip a" title="O evento nunca chega. Existe consulta de status para recuperar?">Webhook ausente</span>
+        <span class="chip a" title="A resposta demora. O retry cria efeito colateral ou respeita o estado anterior?">Timeout e retry</span></div>
+      <!-- CHECKOUT (opcional): para vender o diagnóstico online, troque a linha abaixo por
+           <div class="plan-info"><strong>Contratar agora</strong><a href="checkout.html">Contratar</a></div>
+           e configure o valor e o link de pagamento em checkout.js. -->
+      <div class="plan-info"><strong>Orçamento por escopo</strong><a href="cadastro.html?interesse=Diagn%C3%B3stico%20de%20Integra%C3%A7%C3%A3o">Solicitar</a></div></div>
+
+    <div class="plan" data-aos="fade-up" data-aos-delay="250">
+      <div class="plan-top"><h3>Validação de API e Webhook</h3><span>1 a 2 semanas</span></div>
+      <ul>
+        <li>Cenários de sucesso, erro e borda; autenticação e autorização</li>
+        <li>Contrato OpenAPI/Swagger, Postman e Newman</li>
+        <li>Relatório de evidências e falhas</li>
+      </ul>
+      <div class="chips"><span>Executa os testes de:</span>
+        <span class="chip c" title="O mesmo evento chega duas vezes. O pedido deve ser baixado uma vez só.">Webhook duplicado</span>
+        <span class="chip c" title="Dois cliques ou um retry criam duas cobranças? Verificamos a chave de idempotência.">Cobrança duplicada</span>
+        <span class="chip a" title="Um payload falso é rejeitado ou aceito como pagamento verdadeiro?">Assinatura inválida</span>
+        <span class="chip a" title="Eventos em ordem diferente da esperada não podem corromper o status final.">Webhook fora de ordem</span>
+        <span class="chip a" title="A resposta demora. O retry cria efeito colateral ou respeita o estado anterior?">Timeout e retry</span></div>
+      <div class="plan-info"><strong>Orçamento por escopo</strong><a href="cadastro.html?interesse=Valida%C3%A7%C3%A3o%20de%20API%20e%20Webhook">Solicitar</a></div></div>
+
+    <div class="plan" data-aos="fade-up" data-aos-delay="300">
+      <div class="plan-top"><h3>Homologação de Fluxo de Pagamento</h3><span>2 a 4 semanas</span></div>
+      <ul>
+        <li>Da cobrança à conciliação: aprovado, recusado, expirado e cancelado</li>
+        <li>Indisponibilidade e divergência de status</li>
+        <li>Relatório técnico, relatório executivo e repasse à equipe</li>
+      </ul>
+      <div class="chips"><span>Tudo do pacote anterior e mais:</span>
+        <span class="chip c" title="O provedor aprova, o sistema não reconhece. O cliente pagou e não recebeu.">Pagamento sem atualização do pedido</span>
+        <span class="chip a" title="Valor parcial, total, repetido e fora do prazo, com reflexo no pedido.">Estorno e reembolso</span>
+        <span class="chip a" title="O evento nunca chega. Existe consulta de status para recuperar?">Webhook ausente</span>
+        <span class="chip m" title="Status final correto e QR Code antigo sem efeito.">Pix expirado e cancelado</span>
+        <span class="chip m" title="Extrato do provedor e base interna batem, inclusive com eventos fora de ordem.">Conciliação</span></div>
+      <div class="plan-info"><strong>Orçamento por escopo</strong><a href="cadastro.html?interesse=Homologa%C3%A7%C3%A3o%20de%20Fluxo%20de%20Pagamento">Solicitar</a></div></div>
+
+    <div class="plan" data-aos="fade-up" data-aos-delay="350">
+      <div class="plan-top"><h3>Reteste e acompanhamento</h3><span>Conforme o escopo</span></div>
+      <ul>
+        <li>Repetição dos cenários afetados</li>
+        <li>Verificação de efeitos colaterais</li>
+        <li>Itens marcados como corrigidos, pendentes ou parciais</li>
+      </ul>
+      <div class="chips"><span>Repete apenas os casos que falharam no teste anterior.</span></div>
+      <div class="plan-info"><strong>Pode entrar no projeto inicial</strong><a href="cadastro.html?interesse=Reteste%20e%20acompanhamento">Solicitar</a></div></div></div>
+
+</section>
+
+<!--ABOUT 2-->
+<section class="about about2" id="quem-esta-por-tras">
+<div class="container about-content">
+<div class="about-description" data-aos="zoom-out-right" data-aos-delay="250">
+<h2>Quem está por trás</h2>
+<p>Guy Martial Djoumessi é desenvolvedor full-stack em São Paulo, com foco em backend Java. Ele criou a QTeste Integra para testar integrações de pagamento do ponto de vista de quem as constrói: lê a API, entende o fluxo de cada cobrança 
+    e sabe onde as falhas costumam aparecer.</p>
+<p>Sua experiência inclui APIs REST em Java e Spring Boot, documentadas com Swagger/OpenAPI, e plataformas SaaS com Spring Boot, React, PostgreSQL e Docker, 
+    com microsserviços, autenticação JWT e integração contínua.</p>
+
+</div>
+<div data-aos="zoom-in" data-aos-delay="100"><img src="asset1/sobre-2.svg" alt="imagens sobre a QTeste Integra" /></div>
+</div>
+</section>
+<!--FAQ-->
+<section class="services faq-sec">
+<div class="faq" data-aos="fade-up"><h3>Perguntas frequentes</h3><details><summary>Vocês precisam de acesso à produção?</summary><p>Não. Trabalhamos em sandbox ou homologação, com credenciais e dados de teste fornecidos por você.</p></details><details><summary>Funciona com qualquer provedor?</summary><p>Testamos o comportamento da sua integração via APIs REST e webhooks (Pix, cartão ou boleto). Na conversa inicial confirmamos se o ambiente de testes do provedor permite os cenários necessários.</p></details><details><summary>Vocês certificam a integração?</summary><p>Não. O trabalho valida o comportamento técnico e reduz risco operacional. Certificação oficial segue o processo do próprio provedor.</p></details><details><summary>E se houver problemas graves?</summary><p>Cada achado vem com evidência, severidade e recomendação. Depois das correções, o reteste confirma o que foi resolvido.</p></details></div>
+</section>
+
+<!--TESTIMONIALS-->
+<section class="services testi">
+<div class="services-content container"><h2>Depoimentos</h2>
+<p>Os depoimentos serão publicados somente com autorização expressa dos clientes.</p></div>
+<div class="testi-grid"><div class="testi-card" data-aos="fade-up" data-aos-delay="150"><p class="q">Espaço reservado para o depoimento de um cliente.</p><strong>Nome do cliente</strong><span>Cargo · Empresa</span></div><div class="testi-card" data-aos="fade-up" data-aos-delay="250"><p class="q">Espaço reservado para o depoimento de um cliente.</p><strong>Nome do cliente</strong><span>Cargo · Empresa</span></div><div class="testi-card" data-aos="fade-up" data-aos-delay="350"><p class="q">Espaço reservado para o depoimento de um cliente.</p><strong>Nome do cliente</strong><span>Cargo · Empresa</span></div><div class="testi-card" data-aos="fade-up" data-aos-delay="450"><p class="q">Espaço reservado para o depoimento de um cliente.</p><strong>Nome do cliente</strong><span>Cargo · Empresa</span></div></div>
+</section>
+
+<!--CONTACT-->
+<!-- Contato: "Bater um papo" (WhatsApp) ou "Deixar uma mensagem" (formulário -> e-mail).
+     Configure o envio do formulário em script.js (variáveis EMAIL e FORM_ENDPOINT). -->
+<section class="about contact-sec" id="contato">
+    <div class="container">
+        <div class="contact-head" data-aos="fade-up">
+            <h2>Vamos falar da sua integração</h2>
+            <p>Escolha a forma mais confortável de começar.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="150">
+                <h3>Bater um papo</h3>
+                <p>Uma conversa de 30 minutos, sem custo, para entender o seu projeto, o provedor que você usa e indicar o pacote mais adequado.</p>
+                <a class="button-contact" href="cadastro.html">Agendar uma conversa</a>
+                <p class="contact-small">Prefere o WhatsApp? <a href="https://api.whatsapp.com/send?phone=5511958567231&amp;text=Quero%20bater%20um%20papo%20sobre%20o%20meu%20projeto%20de%20integra%C3%A7%C3%A3o." target="_blank">Chame direto</a> ou escreva para <a href="mailto:guymartialdjoumessi@gmail.com">guymartialdjoumessi@gmail.com</a></p>
+            </div>
+            <form class="contact-card" id="contact-form" data-aos="fade-up" data-aos-delay="250">
+                <h3>Deixar uma mensagem</h3>
+                <p>Prefere escrever? Conte o que precisa e respondemos por e-mail.</p>
+                <div class="field-row">
+                    <label>Nome<input name="nome" required autocomplete="name" /></label>
+                    <label>E-mail<input name="email" type="email" required autocomplete="email" /></label>
+                </div>
+                <div class="field-row">
+                    <label>Empresa (opcional)<input name="empresa" autocomplete="organization" /></label>
+                    <label>Provedor de pagamento
+                        <select name="provedor">
+                            <option>Ainda não definido</option>
+                            <option>Pix direto</option>
+                            <option>Gateway de cartão</option>
+                            <option>Boleto</option>
+                            <option>Vários provedores</option>
+                        </select>
+                    </label>
+                </div>
+                <label>Sua mensagem<textarea name="mensagem" required placeholder="Ex.: vamos lançar Pix no mês que vem e queremos validar os webhooks."></textarea></label>
+                <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <label class="chk"><input type="checkbox" name="lgpd" required /> Concordo que meus dados sejam usados apenas para responder a esta mensagem (LGPD).</label>
+                <button class="button-contact" type="submit">Enviar mensagem</button>
+                <p class="form-status" id="form-status" role="status"></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--FOOTER-->
+<footer class="footer">
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/guydjoumessi" target="_blank">
+                <i class="fa-brands fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/GMDEVPRO" target="_blank">
+                <i class="fa-brands fa-github fa-2x"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5511958567231&amp;text=Quero%20agendar%20uma%20conversa%20sobre%20minha%20integra%C3%A7%C3%A3o%20de%20pagamento." target="_blank">
+                <i class="fa-brands fa-whatsapp fa-2x"></i>
+            </a>
+        </div>
+
+        <div class="footer-logo"><img class="logo-img" src="asset1/logo-qteste.png" alt="QTeste Integra" /></div>
+
+        <p>Copyright 2026 QTeste Integra - Todos os direitos reservados</p>
+
+    </footer>
+
+     <!---Button Watsapp-->
+
+     <a 
+     href="https://api.whatsapp.com/send?phone=5511958567231&amp;text=Quero%20agendar%20uma%20conversa%20sobre%20minha%20integra%C3%A7%C3%A3o%20de%20pagamento."
+     class="btn-whatsapp"
+     target="_blank" >
+         <img src="asset1/whatssapp.svg" alt="botão WhatsApp" />
+         <span class="tooltip-text">Fale conosco</span>
+     </a>
+     
+     
+  
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
