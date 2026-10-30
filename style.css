@@ -37,6 +37,29 @@ i {
   color: #4fb0d8;
 }
 
+/* Ícone do WhatsApp (SVG embutido): mesmo tamanho e cor dos outros ícones sociais */
+.header-icons svg.icon-wa,
+.footer-icons svg.icon-wa {
+  width: 28px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  fill: #fff;
+}
+
+.header-icons a:hover svg.icon-wa {
+  animation: translateY 0.8s infinite alternate;
+  fill: #4fb0d8;
+}
+
+@media screen and (max-width: 768px) {
+  .header-content svg.icon-wa {
+    margin-top: 16px;
+    width: 30px;
+    height: 34px;
+  }
+}
+
 @keyframes translateY {
   from {
     transform: translateY(0) scale(1);
@@ -330,6 +353,23 @@ p {
   color: #fff;
 }
 
+/* Rodapé: ícones sociais alinhados como no cabeçalho */
+.footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.footer-icons a {
+  display: flex;
+  align-items: center;
+}
+
+.footer-icons svg.icon-wa {
+  display: block;
+}
+
 .btn-whatsapp {
   position: fixed;
   bottom: 14px;
@@ -394,6 +434,14 @@ img {
 a {
   cursor: pointer;
   text-decoration: none;
+}
+
+/* Celular: desce um pouco o bloco do título e dos botões */
+@media screen and (max-width: 768px) {
+  .hero {
+    justify-content: flex-start;
+    padding-top: 60px;
+  }
 }
 
 /* ---------- ESTILOS ADICIONADOS ---------- */
